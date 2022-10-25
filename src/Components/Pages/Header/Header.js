@@ -18,18 +18,18 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className='ms-auto'>
-                            <Nav.Link> <Link to='/'>Courses</Link></Nav.Link>
-                            <Nav.Link>FAQ</Nav.Link>
-                            <Nav.Link>Blog</Nav.Link>
-                            <Nav.Link><FaUser /><span> User</span></Nav.Link>
-                            <Nav.Link>
+                            <Link className='me-4 text-decoration-none text-light' to='/courses'>Courses</Link>
+                            <Link className='me-4 text-decoration-none text-light'>FAQ</Link>
+                            <Link className='me-4 text-decoration-none text-light'>Blog</Link>
+                            <Link className='me-4 text-decoration-none text-light'><FaUser data-toggle="tooltip" data-placement="bottom" title="user.displayName" /></Link>
+                            <Link className='me-4 text-decoration-none text-light'>
                                 <Button variant="outline-secondary">
                                     {/* {
                                         dark ? <span>Dark</span> :
                                             <span>Light</span>
                                     } */}
                                 </Button>
-                            </Nav.Link>
+                            </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
