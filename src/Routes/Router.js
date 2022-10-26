@@ -6,6 +6,7 @@ import Premium from '../Components/Pages/Premium/Premium';
 import LogIn from '../Components/Pages/Register/LogIn';
 import Register from '../Components/Pages/Register/Register';
 import Main from './layout.js/Main';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 export const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
-                element: <CourseSamary />
+                element: <PrivateRoute><CourseSamary /></PrivateRoute>
             },
             {
                 path: '/premium',

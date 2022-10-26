@@ -21,7 +21,7 @@ const Home = () => {
                         />)
                     }
                 </div>
-                <div className='col-12 col-md-10'>
+                <div className='col-12 col-md-10 bg-light'>
                     <h2 className='text-center fw-bold pt-4'>Choice Your <span className='text-warning'>Best Course</span></h2>
                     <CourseCard />
                 </div>

@@ -52,13 +52,14 @@ const Register = () => {
                 console.log(user);
             })
             .catch(error => {
+                setError(error.message);
                 console.error(error);
             })
     }
     return (
         <Container>
             <Form onSubmit={submitHandler} className='w-75 mx-auto py-5'>
-                <h1 className='mx-auto mt-4 bg-secondary text-center p-2 rounded-top text-light'>Please, Register Here..</h1>
+                <h1 className='mx-auto mt-4 bg-primary text-center p-2 rounded-top text-light'>Please, Register Here..</h1>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Enter Name" required />
@@ -78,6 +79,11 @@ const Register = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
+
+                <Form.Text className="text-danger">
+                    {error}
+                </Form.Text>
+
                 <Form.Text>
                     Already have an account? Please <Link to='/logIn'>log in</Link>
                 </Form.Text>

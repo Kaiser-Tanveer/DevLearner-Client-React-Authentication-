@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Cards = ({ card }) => {
     return (
-        <div className="col-12 col-md-6 col-lg-4">
+        <div className="col-12 col-md-6 col-lg-4 g-4">
             <Card>
                 <Card.Img className='img-fluid p-2' variant="top" src={card?.img} />
                 <Card.Body>

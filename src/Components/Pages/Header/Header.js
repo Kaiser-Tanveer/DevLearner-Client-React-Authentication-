@@ -10,8 +10,17 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     // const [dark, setDark] = useState(false);
+
+    // Log Out 
+    const signOutHandler = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.error(error);
+            })
+    }
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -24,7 +33,19 @@ const Header = () => {
                             <Link className='me-4 text-decoration-none text-light' to='/courses'>Courses</Link>
                             <Link className='me-4 text-decoration-none text-light'>FAQ</Link>
                             <Link className='me-4 text-decoration-none text-light'>Blog</Link>
-                            <Link className='me-4 text-decoration-none text-light'><FaUser data-toggle="tooltip" data-placement="bottom" title={user?.name} /></Link>
+                            <div className='me-4 text-decoration-none text-light' data-toggle="tooltip" data-placement="bottom" title={user?.email}>
+                                {
+                                    user && user?.uid ?
+                                        <>
+                                            <img className='rounded-circle' src={user?.photoURL} alt="" height="35px" width="35px" />
+                                            <Button onClick={signOutHandler} variant='outline-primary' size='sm'>Log Out</Button>
+                                        </>
+                                        :
+                                        <>
+                                            <Link to='/logIn'><Button className='fw-bold' variant='light' size='sm'>Log In</Button></Link>
+                                        </>
+                                }
+                            </div>
                             <Link className='me-4 text-decoration-none text-light'>
                                 <Button variant="outline-secondary">
                                     {/* {
