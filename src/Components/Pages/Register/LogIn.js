@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const LogIn = () => {
+    // Getting Context 
+    const { emailLogIn } = useContext(AuthContext);
+    // Error State 
     const [error, setError] = useState();
     // Submit Handler 
     const submitHandler = e => {
@@ -13,7 +17,21 @@ const LogIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password)
+
+        // Email sign in method 
+        emailLogIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch(error => {
+                setError(error.message)
+                console.error(error)
+            })
+
+
     }
     return (
         <Container>
@@ -27,7 +45,7 @@ const LogIn = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="Password" required />
                     <Form.Text className="text-danger">
-                        Eroor
+                        {error}
                     </Form.Text>
                 </Form.Group>
                 <Form.Text>

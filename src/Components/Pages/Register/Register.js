@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
+
 
 const Register = () => {
+    // Getting Context 
+    const { crateEmailUser } = useContext(AuthContext);
     const [error, setError] = useState();
     // Submit Handler 
     const submitHandler = e => {
@@ -12,7 +16,17 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
+        // user creating method
+        crateEmailUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
     return (
         <Container>
