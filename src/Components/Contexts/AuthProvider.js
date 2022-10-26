@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createContext } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth'
 import app from '../../Firebase/firebase.config';
 
 export const AuthContext = createContext();
@@ -59,12 +59,16 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
+    // profile updating method 
+    const updateUserProfile = (profile) => {
+        return updateProfile(auth.currentUser, profile);
+    }
 
 
 
 
     // AuthValues 
-    const authValue = { crateEmailUser, emailLogIn, googleLogIn, gitLogIn, user, logOut };
+    const authValue = { crateEmailUser, emailLogIn, googleLogIn, gitLogIn, user, logOut, updateUserProfile };
     return (
         <AuthContext.Provider value={authValue}>
             {children}

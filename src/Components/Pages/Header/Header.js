@@ -11,6 +11,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
     // const [dark, setDark] = useState(false);
 
     // Log Out 
@@ -33,11 +34,11 @@ const Header = () => {
                             <Link className='me-4 text-decoration-none text-light' to='/courses'>Courses</Link>
                             <Link className='me-4 text-decoration-none text-light'>FAQ</Link>
                             <Link className='me-4 text-decoration-none text-light'>Blog</Link>
-                            <div className='me-4 text-decoration-none text-light' data-toggle="tooltip" data-placement="bottom" title={user?.email}>
+                            <div className='me-4 text-decoration-none text-light'>
                                 {
                                     user && user?.uid ?
                                         <>
-                                            <img className='rounded-circle' src={user?.photoURL} alt="" height="35px" width="35px" />
+                                            <img data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4' src={user?.photoURL} alt="" height="35px" width="35px" />
                                             <Button onClick={signOutHandler} variant='outline-primary' size='sm'>Log Out</Button>
                                         </>
                                         :

@@ -9,7 +9,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
     // Getting Context 
-    const { crateEmailUser, googleLogIn, gitLogIn } = useContext(AuthContext);
+    const { crateEmailUser, googleLogIn, gitLogIn, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState();
     // Submit Handler 
     const submitHandler = e => {
@@ -25,6 +25,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                profileUpdateHandler(name, photoURL);
                 form.reset();
             })
             .catch(error => {
@@ -56,6 +57,20 @@ const Register = () => {
                 console.error(error);
             })
     }
+
+    // Update Profile Handler 
+    const profileUpdateHandler = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
     return (
         <Container>
             <Form onSubmit={submitHandler} className='w-75 mx-auto py-5'>
