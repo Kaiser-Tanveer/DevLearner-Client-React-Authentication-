@@ -3,6 +3,8 @@ import CourseSamary from '../Components/Pages/CourseSummary/CourseSamary';
 import Home from '../Components/Pages/Home/Home';
 import NotFound from '../Components/Pages/NotFound/NotFound';
 import Premium from '../Components/Pages/Premium/Premium';
+import LogIn from '../Components/Pages/Register/LogIn';
+import Register from '../Components/Pages/Register/Register';
 import Main from './layout.js/Main';
 
 export const router = createBrowserRouter([
@@ -28,6 +30,14 @@ export const router = createBrowserRouter([
             {
                 path: '/premium',
                 element: <Premium />
+            },
+            {
+                path: '/logIn',
+                element: <LogIn />
+            },
+            {
+                path: '/register',
+                element: <Register />
             },
             {
                 path: '*',
