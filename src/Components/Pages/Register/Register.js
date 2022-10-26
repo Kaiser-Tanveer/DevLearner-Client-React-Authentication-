@@ -34,6 +34,7 @@ const Register = () => {
                 <Form.Text>
                     Already have an account? Please <Link to='/logIn'>log in</Link>
                 </Form.Text>
+                <br />
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
