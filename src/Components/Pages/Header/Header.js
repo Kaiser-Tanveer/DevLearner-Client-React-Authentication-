@@ -1,4 +1,5 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -6,8 +7,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaSun, FaMoon, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     // const [dark, setDark] = useState(false);
     return (
         <div>
@@ -21,7 +24,7 @@ const Header = () => {
                             <Link className='me-4 text-decoration-none text-light' to='/courses'>Courses</Link>
                             <Link className='me-4 text-decoration-none text-light'>FAQ</Link>
                             <Link className='me-4 text-decoration-none text-light'>Blog</Link>
-                            <Link className='me-4 text-decoration-none text-light'><FaUser data-toggle="tooltip" data-placement="bottom" title="user.displayName" /></Link>
+                            <Link className='me-4 text-decoration-none text-light'><FaUser data-toggle="tooltip" data-placement="bottom" title={user?.name} /></Link>
                             <Link className='me-4 text-decoration-none text-light'>
                                 <Button variant="outline-secondary">
                                     {/* {
