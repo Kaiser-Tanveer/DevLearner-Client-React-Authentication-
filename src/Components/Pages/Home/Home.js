@@ -11,8 +11,8 @@ const Home = () => {
     // console.log(courses);
     return (
         <Container>
-            <Row>
-                <Col className='bg-primary py-5'>
+            <div className='row'>
+                <div className='col-12 col-md-2 text-center text-md-start bg-primary py-5'>
                     <h3>Total Courses: {courses.length}</h3>
                     {
                         courses.map(course => <Course
@@ -20,11 +20,12 @@ const Home = () => {
                             course={course}
                         />)
                     }
-                </Col>
-                <Col xs={10}>
+                </div>
+                <div className='col-12 col-md-10'>
+                    <h2 className='text-center fw-bold pt-4'>Choice Your <span className='text-warning'>Best Course</span></h2>
                     <CourseCard />
-                </Col>
-            </Row>
+                </div>
+            </div>
         </Container>
     );
 };

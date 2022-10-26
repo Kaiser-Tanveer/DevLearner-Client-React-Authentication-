@@ -35,8 +35,9 @@ const LogIn = () => {
     }
     return (
         <Container>
-            <Form onSubmit={submitHandler} className='w-50 mx-auto py-5'>
+            <Form onSubmit={submitHandler} className='w-75 mx-auto py-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <h1 className='mx-auto mt-4 bg-secondary text-center p-2 rounded-top text-light'>Please, Log in Here..</h1>
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
@@ -51,6 +52,7 @@ const LogIn = () => {
                 <Form.Text>
                     New in this website? Please <Link to='/register'>register</Link>
                 </Form.Text>
+                <br />
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>

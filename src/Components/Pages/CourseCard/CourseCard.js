@@ -11,7 +11,7 @@ const CourseCard = () => {
             .then(data => setCards(data))
     }, [])
     return (
-        <div className='py-5'>
+        <div className='row py-5'>
             {
                 cards.map(card => <Cards
                     key={card.id}
