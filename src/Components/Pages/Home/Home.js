@@ -12,14 +12,16 @@ const Home = () => {
     return (
         <Container>
             <div className='row'>
-                <div className='col-12 col-md-2 text-center text-md-start bg-primary py-5'>
-                    <h3>Total Courses: {courses.length}</h3>
-                    {
-                        courses.map(course => <Course
-                            key={course.id}
-                            course={course}
-                        />)
-                    }
+                <div className='col-12 col-md-2 text-center text-md-start bg-primary py-5 position-relative px-2'>
+                    <h3>Courses: {courses.length}</h3>
+                    <div className='position-fixed'>
+                        {
+                            courses.map(course => <Course
+                                key={course.id}
+                                course={course}
+                            />)
+                        }
+                    </div>
                 </div>
                 <div className='col-12 col-md-10 bg-light'>
                     <h2 className='text-center fw-bold pt-4'>Choice Your <span className='text-warning'>Best Course</span></h2>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const LogIn = () => {
@@ -11,6 +11,13 @@ const LogIn = () => {
     const { emailLogIn } = useContext(AuthContext);
     // Error State 
     const [error, setError] = useState();
+
+    // Redirecting 
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+
+
     // Submit Handler 
     const submitHandler = e => {
         e.preventDefault();
@@ -25,6 +32,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 setError(error.message);

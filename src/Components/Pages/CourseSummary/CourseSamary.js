@@ -2,19 +2,30 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Image } from 'react-bootstrap';
+import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 
 const CourseSamary = () => {
+    // React to Pdf 
+    const componentRef = useRef();
+    const printHandler = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
+
     const courseSamary = useLoaderData();
     // console.log(courseSamary);
     return (
         <Container className='py-5'>
             <Card>
                 <Card.Header className='d-flex justify-content-between' as="h3">
-                    <div>{courseSamary.name}</div><Button>Download pdf</Button></Card.Header>
-                <Card.Body>
-                    <Card.Title>{courseSamary.title}</Card.Title>
-                    <Image className='img-fluid w-25' src={courseSamary.img} />
-                    <Card.Text>
+                    <div>{courseSamary.name}</div><Button onClick={printHandler}>Download pdf</Button></Card.Header>
+                <Card.Body ref={componentRef} style={{ width: '100%', height: 'window.innerHeight', padding: '20px' }}>
+                    <Card.Title className='text-center fs-1 pt-5 pb-3'>{courseSamary.title}</Card.Title>
+                    <div className='w-100 d-flex mx-auto justify-content-center'>
+                        <Image className='img-fluid w-25' src={courseSamary.img} />
+                    </div>
+                    <Card.Text className='py-3'>
                         {courseSamary.details}
                     </Card.Text>
                 </Card.Body>

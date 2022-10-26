@@ -68,7 +68,7 @@ const AuthProvider = ({ children }) => {
 
 
     // AuthValues 
-    const authValue = { crateEmailUser, emailLogIn, googleLogIn, gitLogIn, user, logOut, updateUserProfile };
+    const authValue = { crateEmailUser, emailLogIn, googleLogIn, gitLogIn, user, logOut, updateUserProfile, loading, setLoading };
     return (
         <AuthContext.Provider value={authValue}>
             {children}
