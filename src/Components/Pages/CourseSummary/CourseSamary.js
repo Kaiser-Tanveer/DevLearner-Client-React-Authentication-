@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Image } from 'react-bootstrap';
@@ -19,6 +19,7 @@ const CourseSamary = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
+            <Button variant='warning' className='w-100 fw-bold text-uppercase fs-2 my-4'><Link className='text-decoration-none' to='/premium'>Get Premium Access</Link></Button>
         </Container>
     );
 };

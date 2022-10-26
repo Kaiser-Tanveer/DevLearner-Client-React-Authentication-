@@ -3,12 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Course from './Course';
-import CourseSamary from './CourseSamary';
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import CourseCard from './CourseCard';
-import { Button } from 'bootstrap';
+import Course from '../Courses/Course';
+import CourseCard from '../CourseCard/CourseCard';
 
 const Home = () => {
     const courses = useLoaderData();
@@ -17,6 +13,7 @@ const Home = () => {
         <Container>
             <Row>
                 <Col className='bg-primary py-5'>
+                    <h3>Total Courses: {courses.length}</h3>
                     {
                         courses.map(course => <Course
                             key={course.id}
@@ -24,11 +21,8 @@ const Home = () => {
                         />)
                     }
                 </Col>
-                <Col className='py-5 w-full' xs={10}>
-                    <div className='row-cols-3'>
-                        <CourseCard />
-                        <button className='btn btn-warning w-75 fw-bold'>Get Premium Option</button>
-                    </div>
+                <Col xs={10}>
+                    <CourseCard />
                 </Col>
             </Row>
         </Container>
