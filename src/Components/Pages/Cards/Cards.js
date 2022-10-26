@@ -15,7 +15,7 @@ const Cards = ({ card }) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <Link to={`/category/${card.id}`} className='text-start text-light'><Button variant='primary' className='w-100'>Details</Button></Link>
+                    <Link to={`/category/${card.id}`} className='text-start text-light'><Button variant='primary' className='w-100'>Checkout</Button></Link>
                 </Card.Footer>
             </Card>
         </div>
