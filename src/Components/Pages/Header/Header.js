@@ -32,8 +32,8 @@ const Header = () => {
 
                         <Nav className='ms-auto'>
                             <Link className='me-4 text-decoration-none text-light' to='/courses'>Courses</Link>
-                            <Link className='me-4 text-decoration-none text-light'>FAQ</Link>
-                            <Link className='me-4 text-decoration-none text-light'>Blog</Link>
+                            <Link className='me-4 text-decoration-none text-light' to='faq'>FAQ</Link>
+                            <Link className='me-4 text-decoration-none text-light' to='/blog'>Blog</Link>
                             <div className='me-4 text-decoration-none text-light'>
                                 {
                                     user && user?.uid ?
