@@ -76,7 +76,7 @@ const Register = () => {
             <Form onSubmit={submitHandler} className='w-75 mx-auto py-5'>
                 <h1 className='mx-auto mt-4 bg-primary text-center p-2 rounded-top text-light'>Please, Register Here..</h1>
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Your Name</Form.Label>
+                    <Form.Label>Your Full Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Enter Name" required />
                 </Form.Group>
 

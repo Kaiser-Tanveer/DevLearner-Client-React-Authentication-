@@ -38,7 +38,7 @@ const Header = () => {
                                 {
                                     user && user?.uid ?
                                         <>
-                                            <img data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4' src={user?.photoURL} alt="" height="35px" width="35px" />
+                                            <Link to='/profile'><img data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4' src={user?.photoURL} alt="" height="35px" width="35px" /></Link>
                                             <Button onClick={signOutHandler} variant='outline-primary' size='sm'>Log Out</Button>
                                         </>
                                         :
