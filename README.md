@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Project Name:
+Added Name as "DevLearn" and a logo.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Navbar:
+User Navbar from "React Bootstrap".(With active link)
+Menu lists on the Navbar are:
+1. Courses
+2. FAQ
+3. Blog
+4. User profile (Conditional)
+5. Login/Log out button (Conditional)
+6. Dark theme toggler with Bootstrap
 
-## Available Scripts
+# Classes Section:
+1. Class section divided into 2 parts with Bootstrap:
+    a. Left side 'menu bar' (course category bar) 2 columns
+    b. Right side 'card' (course card) 10 columns
+2. Click on a menu from menu bar you'll redirect to the Course Detail page (If you're Logged in).
+3. If you click the 'Checkout' button from card you'll redirect to the Course Detail page (If you're Logged in).
+4. When you redirect to the detail page you see a pdf downloader button. You can print or save the course details by clicking the button.
 
-In the project directory, you can run:
+# Blog Section: 
+Added 4 important questions and answer.
 
-### `npm start`
+# Log in:
+3 types of log in added here:
+1. Email and Password Login.
+2. Google Sign in.
+3. Github sign in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Registration:
+A registration form added requiring the Full name, photoURL, Email and password.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installations:
+1. React app: (npx create-react-app app-name).
+2. React Router: (npm i react-router-dom).
+3. Bootstrap & React Bootstrap (npm i react-bootstrap bootstrap).
+4. React to PDF ($ npm install react-to-pdf).
+5. Firebase (npm install firebase).
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Code & Server link:
+1. # Client Site Code Link: 
+https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Kaiser-Tanveer.git
+2. # Server Side Link: 
+https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-Kaiser-Tanveer.git
+3. # Live Site Link: 
+https://dev-learner.web.app/
