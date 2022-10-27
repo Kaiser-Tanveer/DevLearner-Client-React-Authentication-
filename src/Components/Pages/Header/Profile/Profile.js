@@ -1,4 +1,5 @@
 import React from 'react';
+import './Profile.css';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import Card from 'react-bootstrap/Card';
@@ -7,7 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const Profile = () => {
     const { user } = useContext(AuthContext);
     return (
-        <Card className='w-50 mx-auto my-5'>
+        <Card className='profile mx-auto my-5'>
             <Card.Img variant="top" src={user?.photoURL} />
             <Card.Body>
                 <Card.Title>Name: {user?.displayName}</Card.Title>

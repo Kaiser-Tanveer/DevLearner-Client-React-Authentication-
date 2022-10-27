@@ -23,7 +23,7 @@ const CourseSamary = () => {
     return (
         <Container className='py-5'>
             {
-                user && user?.uid && <h1 className='py-2'>Welcome!! Mr. <span className='text-warning'>{user?.displayName}</span></h1>
+                user && user?.uid && <h1 className='py-2 text-center'>Welcome!! Mr. <span className='text-warning'>{user?.displayName}</span></h1>
             }
             <Card>
                 <Card.Header className='d-flex justify-content-between' as="h3">
