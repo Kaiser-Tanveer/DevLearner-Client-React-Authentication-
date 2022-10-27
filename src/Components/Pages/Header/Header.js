@@ -59,7 +59,7 @@ const Header = () => {
                             </NavLink>
                             <div className='d-flex justify-content-start py-4 py-lg-0 mt-4 mt-lg-0 form-check form-switch'>
                                 <div>
-                                    <input onClick={setDarkHandler} value='dark' type="checkbox" className='form-check-input' id="checkbox" />
+                                    <input onClick={setDarkHandler} value='dark' type="checkbox" className='dark-mode form-check-input' id="checkbox" />
                                     <label className='form-check-label' htmlFor="checkbox"></label>
                                 </div>
                                 <div>

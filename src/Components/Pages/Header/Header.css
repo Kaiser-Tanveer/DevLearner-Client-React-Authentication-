@@ -4,3 +4,7 @@
     border-radius: 10px;
     box-shadow: 2px 3px 8px gray;
 }
+
+.dark-mode {
+    cursor: pointer;
+}
