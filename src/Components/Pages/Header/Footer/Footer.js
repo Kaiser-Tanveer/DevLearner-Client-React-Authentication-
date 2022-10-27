@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='bg-dark pb-2'>
+        <div className='footer bg-dark pb-2'>
             <Button href='https://web.facebook.com/Kaiser2581' target='_blank' className='text-secondary fs-3 mx-2 border-0 bg-dark'><FaFacebook className='social' /></Button>
             <Button href='https://twitter.com/KaiserTanveer' target='_blank' className='text-secondary fs-3 mx-2 border-0 bg-dark'><FaTwitter className='social' /></Button>
             <Button href='https://www.linkedin.com/in/kaiser-tanveer/' target='_blank' className='text-secondary fs-3 mx-2 border-0 bg-dark'><FaLinkedin className='social' /></Button>

@@ -6,7 +6,7 @@ import { FaHandPointRight } from 'react-icons/fa';
 const Blog = () => {
     return (
         <>
-            <Card.Header className='fs-1 fw-bold pt-4 pb-3'><span className='text-warning'>Blog</span> Section</Card.Header>
+            <Card.Header className='fs-1 fw-bold pt-4 pb-3 text-center'><span className='text-warning'>Blog</span> Section</Card.Header>
             <Container>
                 <Card>
                     <Card.Body>

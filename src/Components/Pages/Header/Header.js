@@ -47,8 +47,8 @@ const Header = () => {
                             <NavLink className='me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'>
                                 {
                                     user && user?.uid ?
-                                        <div className='d-flex justify-content-between flex-column flex-lg-row'>
-                                            <NavLink to='/profile' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'mt-4 mt-lg-0 text-start text-decoration-none text-light'}><img data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4' src={user?.photoURL} alt="" height="35px" width="35px" /></NavLink>
+                                        <div className='d-flex justify-content-center flex-column flex-lg-row'>
+                                            <NavLink to='/profile' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'mt-4 mt-lg-0 text-start text-decoration-none text-light'}><img variant='center' data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4 ms-4' src={user?.photoURL} alt="" height="35px" width="35px" /></NavLink>
                                             <Button className='mt-4 mt-lg-0' onClick={signOutHandler} variant='outline-primary' size='sm'>Log Out</Button>
                                         </div>
                                         :
@@ -57,7 +57,7 @@ const Header = () => {
                                         </>
                                 }
                             </NavLink>
-                            <div className='d-flex justify-content-start mt-4 mt-lg-0 form-check form-switch'>
+                            <div className='d-flex justify-content-start py-4 py-lg-0 mt-4 mt-lg-0 form-check form-switch'>
                                 <div>
                                     <input onClick={setDarkHandler} value='dark' type="checkbox" className='form-check-input' id="checkbox" />
                                     <label className='form-check-label' htmlFor="checkbox"></label>
