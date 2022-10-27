@@ -41,10 +41,10 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className='ms-auto align-items-center'>
-                            <NavLink to='/courses' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}>Courses</span></NavLink>
-                            <NavLink to='faq' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}><span className={({ isActive }) => isActive ? 'isActive' : undefined}>FAQ</span></span></NavLink>
-                            <NavLink to='/blog' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}><span className={({ isActive }) => isActive ? 'isActive' : undefined}>Blog</span></span></NavLink>
-                            <NavLink className='me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'>
+                            <NavLink to='/courses' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-center text-decoration-none' : 'me-4 mt-4 mt-lg-0 text-center text-decoration-none'}><span className={checked ? 'text-light' : 'text-dark'}>Courses</span></NavLink>
+                            <NavLink to='faq' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-center text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-center text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}><span className={({ isActive }) => isActive ? 'isActive' : undefined}>FAQ</span></span></NavLink>
+                            <NavLink to='/blog' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-center text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-center text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}><span className={({ isActive }) => isActive ? 'isActive' : undefined}>Blog</span></span></NavLink>
+                            <NavLink className='me-4 mt-4 mt-lg-0 text-center text-decoration-none text-light'>
                                 {
                                     user && user?.uid ?
                                         <div className='d-flex justify-content-center flex-column flex-lg-row'>
