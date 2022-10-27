@@ -1,12 +1,15 @@
 import React from 'react';
+import './Header.css';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import { FaMoon } from 'react-icons/fa';
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -33,30 +36,35 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg={checked ? 'dark' : 'light'} variant={checked ? 'dark' : 'light'}>
                 <Container>
-                    <Navbar.Brand className='fw-bold'> <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-black.png" alt="" height="40px" width="50px" />LEARN</Navbar.Brand>
+                    <Navbar.Brand className='fw-bold'><img src="https://d2fltix0v2e0sb.cloudfront.net/dev-black.png" alt="" height="40px" width="50px" />LEARN</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
 
-                        <Nav className='ms-auto'>
-                            <Link className='me-4 text-decoration-none text-light' to='/courses'><span className={checked ? 'text-light' : 'text-dark'}>Courses</span></Link>
-                            <Link className='me-4 text-decoration-none text-light' to='faq'><span className={checked ? 'text-light' : 'text-dark'}>FAQ</span></Link>
-                            <Link className='me-4 text-decoration-none text-light' to='/blog'><span className={checked ? 'text-light' : 'text-dark'}>Blog</span></Link>
-                            <div className='me-4 text-decoration-none text-light'>
+                        <Nav className='ms-auto align-items-center'>
+                            <NavLink to='/courses' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}>Courses</span></NavLink>
+                            <NavLink to='faq' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}><span className={({ isActive }) => isActive ? 'isActive' : undefined}>FAQ</span></span></NavLink>
+                            <NavLink to='/blog' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'}><span className={checked ? 'text-light' : 'text-dark'}><span className={({ isActive }) => isActive ? 'isActive' : undefined}>Blog</span></span></NavLink>
+                            <NavLink className='me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light'>
                                 {
                                     user && user?.uid ?
-                                        <div className='d-flex justify-content-between'>
-                                            <Link to='/profile'><img data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4' src={user?.photoURL} alt="" height="35px" width="35px" /></Link>
-                                            <Button onClick={signOutHandler} variant='outline-primary' size='sm'>Log Out</Button>
+                                        <div className='d-flex justify-content-between flex-column flex-lg-row'>
+                                            <NavLink to='/profile' className={({ isActive }) => isActive ? 'isActive me-4 mt-4 mt-lg-0 text-start text-decoration-none text-light' : 'mt-4 mt-lg-0 text-start text-decoration-none text-light'}><img data-toggle="tooltip" data-placement="bottom" title={user?.displayName} className='rounded-circle me-4' src={user?.photoURL} alt="" height="35px" width="35px" /></NavLink>
+                                            <Button className='mt-4 mt-lg-0' onClick={signOutHandler} variant='outline-primary' size='sm'>Log Out</Button>
                                         </div>
                                         :
                                         <>
-                                            <Link to='/logIn'><Button className='fw-bold' variant='light' size='sm'>Log In</Button></Link>
+                                            <NavLink to='/logIn'><Button className='fw-bold' variant='light' size='sm'>Log In</Button></NavLink>
                                         </>
                                 }
-                            </div>
-                            <div className='form-check form-switch'>
-                                <input onClick={setDarkHandler} value='dark' type="checkbox" className='form-check-input' id="checkbox" />
-                                <label className='form-check-label' htmlFor="checkbox"></label>
+                            </NavLink>
+                            <div className='d-flex justify-content-start mt-4 mt-lg-0 form-check form-switch'>
+                                <div>
+                                    <input onClick={setDarkHandler} value='dark' type="checkbox" className='form-check-input' id="checkbox" />
+                                    <label className='form-check-label' htmlFor="checkbox"></label>
+                                </div>
+                                <div>
+                                    <FaMoon className={checked ? 'text-secondary fs-4' : 'text-dark fs-4'} />
+                                </div>
                             </div>
                         </Nav>
                     </Navbar.Collapse>

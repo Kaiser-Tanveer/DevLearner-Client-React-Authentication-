@@ -18,17 +18,17 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('http://localhost:5000/category'),
+                loader: () => fetch('https://devlearner-server.vercel.app/category'),
                 element: <Home />,
             },
             {
                 path: '/courses',
-                loader: () => fetch('http://localhost:5000/category'),
+                loader: () => fetch('https://devlearner-server.vercel.app/category'),
                 element: <Home />,
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({ params }) => fetch(`https://devlearner-server.vercel.app/category/${params.id}`),
                 element: <PrivateRoute><CourseSamary /></PrivateRoute>
             },
             {

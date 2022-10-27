@@ -6,7 +6,7 @@ import Cards from '../Cards/Cards';
 const CourseCard = () => {
     const [cards, setCards] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://devlearner-server.vercel.app/category')
             .then(res => res.json())
             .then(data => setCards(data))
     }, [])
