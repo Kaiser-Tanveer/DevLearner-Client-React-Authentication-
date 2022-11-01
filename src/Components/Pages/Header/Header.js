@@ -53,7 +53,8 @@ const Header = () => {
                                         </div>
                                         :
                                         <>
-                                            <NavLink to='/logIn'><Button className='fw-bold' variant='light' size='sm'>Log In</Button></NavLink>
+                                            <NavLink to='/logIn'><Button className='fw-bold me-2' variant='light' size='sm'>Log In</Button></NavLink>
+                                            <NavLink to='/register'><Button className='fw-bold' variant='light' size='sm'>Register</Button></NavLink>
                                         </>
                                 }
                             </NavLink>

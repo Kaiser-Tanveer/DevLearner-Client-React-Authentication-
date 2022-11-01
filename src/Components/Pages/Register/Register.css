@@ -1,0 +1,51 @@
+.form-bg {
+    background-image: url('../../../../public/LoginBg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-container {
+    border-radius: 10px;
+    border: 1px solid #212529;
+    box-shadow: 2px 0px 12px #ffffff;
+}
+
+.form-icon {
+    width: 30%;
+    height: auto;
+    margin: auto;
+    color: #ffffff;
+    font-size: 60px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px #ffffff;
+}
+
+.form {
+    width: 40%;
+}
+
+.logIn-btn {
+    box-shadow: 2px 3px 12px #000000;
+}
+
+.logIn-btn:hover {
+    box-shadow: 2px 3px 12px #ffffff;
+}
+
+.submit-btn {
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 2px 3px 12px #0d6efd;
+}
+
+.submit-btn:hover {
+    box-shadow: 2px 3px 12px #ffffff;
+}
+
+@media (max-width: 991.98px) {
+    .form {
+        width: 100%;
+    }
+}

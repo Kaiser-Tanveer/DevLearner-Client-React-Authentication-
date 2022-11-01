@@ -1,0 +1,10 @@
+.home {
+    background-image: url('../../../../public/mainBg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog-card-title {
+    box-shadow: 2px 2px 12px #000000;
+}

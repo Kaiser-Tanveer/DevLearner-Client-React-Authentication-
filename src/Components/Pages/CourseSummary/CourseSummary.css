@@ -1,0 +1,15 @@
+.course-detail {
+    background-image: url('../../../../public/detailsBg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.detail-card {
+    box-shadow: 2px 2px 5px #ffffff;
+}
+
+.detail-card-img {
+    padding: 10px;
+    box-shadow: 2px 2px 12px gray;
+}
